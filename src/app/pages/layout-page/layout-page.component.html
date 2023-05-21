@@ -1,0 +1,112 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="over" [ngStyle]="{'width': '250px'}">
+    <mat-toolbar>
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- aqui viene la lista de opciones del menu -->
+
+    <mat-nav-list>
+      <mat-list-item
+        *ngFor="let item of sidebarItems"
+        [routerLink]="item.url"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon
+          matListItemIcon
+        >
+          {{item.icon}}
+        </mat-icon>
+        {{item.label}}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary" [ngStyle]="{'background': 'linear-gradient(145deg, rgb(13, 71, 161), rgb(25, 118, 210))'}">
+    <button
+      mat-icon-button
+      (click)="sidenav.toggle()"
+      *ngIf="this.widthScreen < 1249"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <img 
+      src="assets/images/logo.svg" 
+      alt="logo david cuspoca">
+
+    <button
+      mat-button
+      *ngIf="this.widthScreen > 1249"
+      routerLink="/"
+    >
+      Home
+    </button>
+
+    <button
+      mat-button
+      *ngIf="this.widthScreen > 1249"
+      routerLink="projects"
+    >
+      Projects
+    </button>
+
+    <button
+      mat-button
+      *ngIf="this.widthScreen > 1249"
+      routerLink="about-me"
+    >
+      About Me
+    </button>
+
+    <span class="spacer"></span>
+
+    <button
+      mat-icon-button
+      (click)="changeTheme()"
+    >
+      <mat-icon>{{ (dark_mode) ? 'dark_mode':'light_mode' }}</mat-icon>
+    </button>
+
+    <mat-divider 
+      [vertical]="true"
+      [ngStyle]="{'backGroundColor': 'white',
+                  'border': '1px solid',
+                  'height': '60%',
+                  'margin': '0 8px'}"></mat-divider>
+
+    <button
+      mat-icon-button
+      (click)="openOtherSite('https://twitter.com/david_cuspoca')"
+    >
+      <i class="fa-brands fa-twitter"></i>
+    </button>
+
+    <button
+      mat-icon-button
+      (click)="openOtherSite('https://linkedin.com/in/davidcuspoca')"
+    >
+      <i class="fa-brands fa-linkedin"></i>
+    </button>
+
+    <button
+      mat-icon-button
+      (click)="openOtherSite('https://github.com/poca852')"
+    >
+      <i class="fa-brands fa-github"></i>
+    </button>
+
+    <!-- aqui pueden ir mas botones -->
+  </mat-toolbar>
+
+  <div class="container p-2">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

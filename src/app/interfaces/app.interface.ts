@@ -1,0 +1,1 @@
+export type Theme = 'light_mode' | 'dark_mode'
