@@ -33,8 +33,4 @@ export class ThemeService {
     localStorage.setItem('dark_mode', JSON.stringify(value))
   }
 
-  openWindow(url: string): void{
-    window.open(url, '_blank')?.focus;
-  }
-
 }

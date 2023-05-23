@@ -1,0 +1,13 @@
+.menu-large-screen{
+
+  @media screen and (max-width: 1248px) {
+    display: none;
+  }
+}
+
+.btn-openMenu{
+
+  @media screen and (min-width: 1249px){
+    display: none;
+  }
+}

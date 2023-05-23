@@ -1,29 +1,19 @@
 <mat-card class="card">
   <mat-card-header>
-    <mat-card-title>NathyApp</mat-card-title>
+    <mat-card-title>{{project.title}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="assets/images/project-1.png" alt="project nathy app">
+  <img mat-card-image [src]="project.image" [alt]="project.title">
   <mat-card-content>
-    <p class="text-justify">
-      NathyApp is born from the need of a family business, where all notes were handled on paper, running high risks of losing valuable information from all our customers, in addition to the fact that it was tedious to register a new customer, looking for specific customer information in the midst of hundreds of them. That is the need that satisfies NathyApp, have at hand information of our customers, their credits, payments and credit history. Angular is used in the FrontEnd and Node with express in the BackEnd
-    </p>
-    <p>
-      To check the demo, you must log in with the following credentials: user: test, password: 229497
-    </p>
+    <p class="text-justify">{{ project.description }}</p>
+    <p>{{ project.notes }}</p>
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>
-    <button
-      mat-button
-      (click)="openWindow('https://nathyapp.live')"
-    >
+    <button mat-button (click)="openWindow(project.demo)">
       Demo
     </button>
 
-    <button
-      mat-button
-      (click)="openWindow('https://github.com/poca852/nathy-app-v2-front')"
-    >
+    <button mat-button (click)="openWindow(project.repo)">
       Repositorio
     </button>
   </mat-card-actions>

@@ -1,55 +1,35 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ThemeService } from '../../services//theme-service.service';
+import { Menu } from 'src/app/interfaces/menu.interface';
+import { LayoutService } from 'src/app/services/layout.service';
+import { Social } from 'src/app/interfaces/david.interface';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './layout-page.component.html',
-  styleUrls: ['./layout-page.components.css']
+  styleUrls: ['./layout-page.components.scss']
 })
 export class LayoutPageComponent implements OnInit {
 
-  public widthScreen: any;
-  public heightScreen: any;
-
-  public sidebarItems = [
-    {
-      label: 'Home',
-      url: '/',
-      icon: 'home'
-    },
-
-    {
-      label: 'Projects',
-      url: 'projects',
-      icon: 'important_devices'
-    },
-
-    {
-      label: 'About me',
-      url: 'about-me',
-      icon: 'person'
-    }
-  ]
 
   constructor(
-    public themeService: ThemeService
+    public themeService: ThemeService,
+    public layoutService: LayoutService
   ){}
 
   ngOnInit(): void {
-    this.widthScreen = window.innerWidth
-    this.heightScreen = window.innerHeight
-
-    console.log(this.heightScreen, this.widthScreen)
   }
 
   get dark_mode(){
     return this.themeService.darkMode
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResizeWindow(){
-    this.widthScreen = window.innerWidth
-    this.heightScreen = window.innerHeight
+  get menu(): Menu[]{
+    return [...this.layoutService.menu]
+  }
+
+  get social(): Social[]{
+    return [...this.layoutService.david.social]
   }
 
   // para cambiar el theme
@@ -58,6 +38,6 @@ export class LayoutPageComponent implements OnInit {
   }
 
   openOtherSite(url: string): void {
-    window.open(url, '_blank')?.focus()
+    this.layoutService.openNewWindow(url);
   }
 }

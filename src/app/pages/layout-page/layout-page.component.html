@@ -15,7 +15,7 @@
 
     <mat-nav-list>
       <mat-list-item
-        *ngFor="let item of sidebarItems"
+        *ngFor="let item of menu"
         [routerLink]="item.url"
         (click)="sidenav.toggle()"
       >
@@ -33,7 +33,7 @@
     <button
       mat-icon-button
       (click)="sidenav.toggle()"
-      *ngIf="this.widthScreen < 1249"
+      class="btn-openMenu"
     >
       <mat-icon>menu</mat-icon>
     </button>
@@ -43,19 +43,12 @@
       alt="logo david cuspoca">
 
     <button
+      *ngFor="let item of menu"
+      class="menu-large-screen"
       mat-button
-      *ngIf="this.widthScreen > 1249"
-      routerLink="/"
+      routerLink="{{item.url}}"
     >
-      Home
-    </button>
-
-    <button
-      mat-button
-      *ngIf="this.widthScreen > 1249"
-      routerLink="projects"
-    >
-      Projects
+      {{item.label}}
     </button>
 
     <span class="spacer"></span>
@@ -76,23 +69,10 @@
 
     <button
       mat-icon-button
-      (click)="openOtherSite('https://twitter.com/david_cuspoca')"
+      *ngFor="let item of social"
+      (click)="openOtherSite(item.url)"
     >
-      <i class="fa-brands fa-twitter"></i>
-    </button>
-
-    <button
-      mat-icon-button
-      (click)="openOtherSite('https://linkedin.com/in/davidcuspoca')"
-    >
-      <i class="fa-brands fa-linkedin"></i>
-    </button>
-
-    <button
-      mat-icon-button
-      (click)="openOtherSite('https://github.com/poca852')"
-    >
-      <i class="fa-brands fa-github"></i>
+      <i class="{{item.icon}}"></i>
     </button>
 
     <!-- aqui pueden ir mas botones -->

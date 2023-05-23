@@ -7,6 +7,11 @@
   <hr>
 
   <div class="grid g-2 mt-4">
-    <app-card-poject class="sm:col-12 md:col-12 lg:col-4"></app-card-poject>
+    <app-card-poject 
+      *ngFor="let project of projects"
+      class="sm:col-12 md:col-12 lg:col-4"
+      [project]="project"></app-card-poject>
   </div>
 </div>
+
+<app-footer></app-footer>
