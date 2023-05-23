@@ -1,0 +1,11 @@
+.card{
+  border: thin solid rgba(0,0,0,.3);
+  margin-top: 30px;
+  max-width: 100% !important;
+
+  img{
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+}

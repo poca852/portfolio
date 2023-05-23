@@ -1,0 +1,32 @@
+
+.main{
+  margin: 1px auto;
+  width: 90%;
+
+  .testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+
+    .testimonial {
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+  
+      h3 {
+        margin-top: 10px;
+        font-size: 1.3em;
+      }
+  
+      p {
+        margin-top: 10px;
+        font-size: 1.2em;
+        text-align: justify;
+      }
+    }  
+  }
+}
+
+
+

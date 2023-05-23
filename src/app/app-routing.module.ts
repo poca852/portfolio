@@ -20,10 +20,6 @@ const routes: Routes = [
         component: ProjectsComponent
       },
       {
-        path: 'about-me',
-        component: AboutMeComponent
-      },
-      {
         path: '**',
         redirectTo: 'home'
       }

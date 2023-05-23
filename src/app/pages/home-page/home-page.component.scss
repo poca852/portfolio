@@ -41,6 +41,7 @@
   .intro{
     flex-direction: column;
     justify-content: center;
+    margin: 20px auto;
 
     .content-img{
       display: flex;
@@ -49,6 +50,11 @@
 
     .texto{
       text-align: center;
+
+      p{
+        font-size: 1.7rem;
+        display: none;
+      }
     }
   }
 

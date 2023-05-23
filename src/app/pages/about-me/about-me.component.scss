@@ -1,0 +1,36 @@
+.main {
+  margin: 100px auto;
+  width: 90%;
+
+  h1{
+    font-size: 2.4em;
+
+    @media screen and (min-width: 1000px){
+      font-size: 2em;
+    }
+  }
+
+  p {
+    font-size: 1.5em;
+
+    @media screen and (max-width: 1000px) {
+      text-align: justify;
+    }
+  }
+
+  ul{
+
+    li{
+      font-size: 1.5em;
+    }
+  }
+
+  section{
+    @media screen and (min-width: 1140px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+}

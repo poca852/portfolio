@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TerminiosComponent } from './components/terminios/terminios.component';
+import { CardPojectComponent } from './components/card-poject/card-poject.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AboutMeComponent,
     ProjectsComponent,
     HomePageComponent,
+    TerminiosComponent,
+    CardPojectComponent,
   ],
   imports: [
     BrowserModule,
